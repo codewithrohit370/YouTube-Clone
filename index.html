@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube</title>
+    <link rel="icon" href="1.png">
+    <link rel=" stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        * {
+            font-family: sans-serif;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: .4fr 1.3fr 1.3fr;
+            grid-template-rows: 2rem 90vh;
+            border: 2px solid white;
+            column-gap: 20px;
+            row-gap: 15px;
+
+        }
+
+        .item1 {
+            display: flex;
+        }
+
+        .item2 {
+            background-color: transparent;
+            overflow: scroll;
+        }
+        .item2::-webkit-scrollbar{
+            display: none;
+        }
+
+        .item3 {
+            background-color: transparent;
+            overflow: scroll;
+        }
+        .item3::-webkit-scrollbar{
+            display: none;
+        }
+
+        .op {
+            padding: 5px;
+            margin-top: 7px;
+            margin-left: 175px;
+            width: 535px;
+            height: 25px;
+            border-radius: 20px 0px 0px 20px;
+            border: 1px solid gray;
+            position: relative;
+        }
+
+        .pp {
+            border-radius: 0px 20px 20px 0px;
+            height: 37px;
+            width: 55px;
+            border: solid 1px gray;
+            margin-top: 7px;
+        }
+
+        .bar {
+            font-size: 20px;
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .micro {
+            font-size: 17px;
+            margin-top: 7px;
+            margin-left: 17px;
+            border: none;
+            border-radius: 50%;
+            height: 37px;
+            width: 37px;
+        }
+
+        .video {
+            margin-top: 7px;
+            margin-left: 107px;
+            font-size: 20px;
+            border: none;
+            height: 35px;
+            width: 35px;
+            border-radius: 50%;
+        }
+
+        .bell {
+            font-size: 21px;
+            margin-top: 12px;
+            margin-left: 35px;
+        }
+
+        .user {
+            font-size: 21px;
+            margin-top: 12px;
+            margin-left: 35px;
+        }
+
+        .home {
+            margin-top: 25px;
+            margin-left: 15px;
+        }
+
+        .home i {
+            font-size: 17px;
+        }
+
+        .home a {
+            color: black;
+            text-decoration: none;
+            margin-left: 26px;
+
+
+        }
+
+        .Short {
+            margin-top: 25px;
+            margin-left: 15px;
+        }
+
+        .Short i {
+            font-size: 17px;
+        }
+
+        .Short a {
+            color: black;
+            text-decoration: none;
+            margin-left: 26px;
+        }
+
+        .Sub {
+            margin-top: 25px;
+            margin-left: 15px;
+        }
+
+        .Sub i {
+            font-size: 17px;
+        }
+
+        .Sub a {
+            color: black;
+            text-decoration: none;
+            margin-left: 26px;
+
+        }
+
+        .history {
+            margin-top: 25px;
+            margin-left: 15px;
+        }
+
+        .history i {
+            font-size: 17px;
+        }
+
+        .history a {
+            color: black;
+            text-decoration: none;
+            margin-left: 26px;
+
+        }
+
+        .Playlists {
+            margin-top: 25px;
+            margin-left: 15px;
+        }
+
+        .Playlists i {
+            font-size: 17px;
+        }
+
+        .Playlists a {
+            color: black;
+            text-decoration: none;
+            margin-left: 26px;
+
+        }
+
+        .Watch {
+            margin-top: 25px;
+            margin-left: 15px;
+        }
+
+        .Watch i {
+            font-size: 17px;
+        }
+
+        .Watch a {
+            color: black;
+            text-decoration: none;
+            margin-left: 26px;
+
+        }
+
+        .Likes {
+            margin-top: 25px;
+            margin-left: 15px;
+        }
+
+        .Likes i {
+            font-size: 17px;
+        }
+
+        .Likes a {
+            color: black;
+            text-decoration: none;
+            margin-left: 26px;
+
+        }
+
+        .trending {
+            margin-top: 25px;
+            margin-left: 15px;
+        }
+
+        .trending i {
+            font-size: 17px;
+        }
+
+        .trending a {
+            color: black;
+            text-decoration: none;
+            margin-left: 26px;
+
+        }
+
+        .Shopping {
+            margin-top: 25px;
+            margin-left: 15px;
+        }
+
+        .Shopping i {
+            font-size: 17px;
+        }
+
+        .Shopping a {
+            color: black;
+            text-decoration: none;
+            margin-left: 26px;
+
+        }
+
+        .Music {
+            margin-top: 25px;
+            margin-left: 15px;
+        }
+
+        .Music i {
+            font-size: 17px;
+        }
+
+        .Music a {
+            color: black;
+            text-decoration: none;
+            margin-left: 26px;
+
+        }
+
+        .Movies {
+            margin-top: 25px;
+            margin-left: 15px;
+        }
+
+        .Movies i {
+            font-size: 17px;
+        }
+
+        .Movies a {
+            color: black;
+            text-decoration: none;
+            margin-left: 26px;
+
+        }
+
+        .Gaming {
+            margin-top: 25px;
+            margin-left: 15px;
+        }
+
+        .Gaming i {
+            font-size: 17px;
+        }
+
+        .Gaming a {
+            color: black;
+            text-decoration: none;
+            margin-left: 26px;
+
+        }
+
+        .Sports {
+            margin-top: 25px;
+            margin-left: 15px;
+        }
+
+        .Sports i {
+            font-size: 17px;
+        }
+
+        .Sports a {
+            color: black;
+            text-decoration: none;
+            margin-left: 26px;
+
+        }
+
+        .video13 {
+            display: flex;
+
+        }
+
+        .video13 {
+            gap: 10px;
+            margin-left: 22px;
+        }
+
+        .box {
+            background-color: rgb(230, 217, 217);
+            color: black;
+            border-radius: 10px 10px 10px 10px;
+            border: none;
+            height: 30px;
+            width: 150px;
+            margin: 12px 12px 12px 0px;
+            padding: 0px 12px;
+        }
+
+        .box:hover {
+            background-color: black;
+            color: white;
+        }
+
+        .line2 {
+            height: 360px;
+            width: 100%;
+            background-color: transparent;
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            margin-left: 20px;
+            gap: 10px;
+
+        }
+
+        .box2 iframe {
+            border-radius: 10px;
+        }
+
+        .box2 {
+            height: 350px;
+            width: 32%;
+            background-color: transparent;
+        }
+
+        .Channel {
+            display: flex;
+        }
+
+        .Channel img {
+            height: 33px;
+            width: 33px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+        }
+
+        .Channel a {
+            text-decoration: none;
+            color: black;
+            margin-top: 5px;
+            margin-left: 5px;
+
+        }
+
+        .chname {
+            margin-left: 39px;
+            line-height: 25px;
+        }
+
+        .chname a {
+            text-decoration: none;
+            color: black;
+            opacity: 0.7;
+            line-height: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item1" style="grid-column: 1 / 4;">
+            <div style="display: flex;">
+                <div class="bar"><i class="fa-solid fa-bars"></i>
+                </div>
+                <div><img src="lk.png" style="margin-top: 0.7px; margin-left: 20px;" height="40px" width="150px"></div>
+
+                <div><input class="op" type="text" placeholder="Search"></div>
+                <div><button type="button" class="pp"><i class="fa-solid fa-magnifying-glass"></i></button></div>
+                <div><button type="button" class="micro"><i class="fa-solid fa-microphone"></i></button></div>
+                <div><button class="video"><i class="fa-solid fa-video"></i></button></div>
+                <div class="bell"><i class="fa-regular fa-bell"></i></div>
+                <div class="user"><i class="fa-solid fa-user"></i></div>
+
+            </div>
+        </div>
+
+        <div class="item2" style="grid-column: 1 / 1.5;">
+            <div class="container2">
+                <div class="home">
+                    <i class="fa-solid fa-house"></i>
+                    <a href="#">Home</a>
+                </div>
+
+                <div class="Short">
+                    <i class="fa-solid fa-eye"></i>
+                    <a href="#">Shorts</a>
+                </div>
+
+                <div class="Sub">
+                    <i class="fa-solid fa-money-bill"></i>
+                    <a href="#">Subscriptions</a>
+                </div>
+                <hr style="color: gray;">
+
+                <div>
+                    <h3 style="margin-left: 39px;">You</h3>
+                </div>
+
+                <div class="history">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                    <a href="#">History</a>
+                </div>
+
+                <div class="Playlists">
+                    <i class="fa-solid fa-list-check"></i>
+                    <a href="#">Playlists</a>
+                </div>
+
+                <div class="Watch">
+                    <i class="fa-regular fa-clock"></i>
+                    <a href="#">Watch later</a>
+                </div>
+
+                <div class="Likes">
+                    <i class="fa-regular fa-thumbs-up"></i>
+                    <a href="#">Liked videos</a>
+                </div>
+                <hr>
+                <div>
+                    <h3 style="margin-left: 39px;">Explore</h3>
+                </div>
+
+                <div class="trending">
+                    <i class="fa-solid fa-fire"></i>
+                    <a href="#">Trending</a>
+                </div>
+
+                <div class="Shopping">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <a href="#">Shopping</a>
+                </div>
+
+                <div class="Music">
+                    <i class="fa-solid fa-music"></i>
+                    <a href="#">Music</a>
+                </div>
+
+                <div class="Movies">
+                    <i class="fa-solid fa-clapperboard"></i>
+                    <a href="#">Movies</a>
+                </div>
+
+                <div class="Gaming">
+                    <i class="fa-solid fa-gamepad"></i>
+                    <a href="#">Gaming</a>
+                </div>
+                <div class="Sports">
+                    <i class="fa-solid fa-trophy"></i>
+                    <a href="#">Sports</a>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+
+        </div>
+
+        <div class="item3" style="grid-column: 2 / 4;">
+            <div class="video13">
+                <button class="box" type="button">All</button>
+                <button class="box" type="button">Gaming</button>
+                <button class="box" type="button">Live</button>
+                <button class="box" type="button">Free Fire MAX</button>
+                <button class="box" type="button">Music</button>
+                <button class="box" type="button">Web Development</button>
+            </div>
+
+            <div class="line2">
+                <div class="box2">
+                    <iframe width="360" height="200" src="https://www.youtube.com/embed/vQcHPQJ4Ujs?si=c-S1w5jScObjqkeG"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen ></iframe>
+
+                    <div class="Channel">
+                        <img src="channels4_profile.jpg" >
+                        <a href="#">Which one to Choose - Web Development vs App Development ?</a>
+                        <br>
+                    </div>
+                    <div class="chname">
+                        <a href="#">Apna College </a>
+                        <br>
+                        <a href="#">495K views 3 weeks ago</a>
+                    </div>
+                </div>
+                <div class="box2">
+                    <iframe width="360" height="200" src="https://www.youtube.com/embed/NkwFxeHARqc?si=pzidveQ071j8WF-N"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                    <div class="Channel">
+                        <img src="12.jpg">
+                        <a href="#">Web Development Roadmap 2025 with GenAI</a>
+                        <br>
+                    </div>
+                    <div class="chname">
+                        <a href="#">Chai aur Code</a>
+                        <br>
+                        <a href="#">129K views 2 weeks ago</a>
+                    </div>
+
+
+                </div>
+                <div class="box2">
+                    <iframe width="360" height="200" src="https://www.youtube.com/embed/2uPwIezRJFs?si=ckPsT_KDAqETv9hQ"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                    <div class="Channel">
+                        <img src="8bit.jpg">
+                        <a href="#">THE MORTAL WEDDING VLOG 😍</a>
+                        <br>
+                    </div>
+                    <div class="chname">
+                        <a href="#">8bit MAMBA</a>
+                        <br>
+                        <a href="#">225,358 views 5 hours ago</a>
+                    </div>
+                </div>
+
+                <div class="box2">
+                    <iframe width="360" height="200" src="https://www.youtube.com/embed/yASbKDe-sjg?si=PCBaMO1xHM1_uhxV"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                    <div class="Channel">
+                        <img src="tech.jpg">
+                        <a href="#">THIS COOL GADGET WILL BLOW YOUR MIND</a>
+                        <br>
+                    </div>
+
+                    <div class="chname">
+                        <a href="#">TechShot</a>
+                        <br>
+                        <a href="#">624,099 views 21 hours ago </a>
+                    </div>
+                </div>
+                <div class="box2">
+                    <iframe width="360" height="200" src="https://www.youtube.com/embed/2W_QQ4bN9sw?si=h1Fdn-GhpLJGENiP"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                    <div class="Channel">
+                        <img src="m.jpg">
+                        <a href="#">A New Special Phone in India - But ......</a>
+                        <br>
+                    </div>
+                    <div class="chname">
+                        <a href="#">Gyan Therapy</a>
+                        <br>
+                        <a href="#">642K views 1 day ago </a>
+                    </div>
+                </div>
+                <div class="box2">
+                    <iframe width="360" height="200" src="https://www.youtube.com/embed/MaotFSLh6fk?si=knCAAG2DE2f-45Nj"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                    <div class="Channel">
+                        <img src="Q.jpg.">
+                        <a href="#">Top 5 Coding Languages To Learn In 2025</a>
+                        <br>
+                    </div>
+                    <div class="chname">
+                        <a href="#">The Techie Town</a>
+                        <br>
+                        <a href="#">459 views 2 days ago</a>
+                    </div>
+                </div>
+                <div class="box2">
+                    <iframe width="360" height="200" src="https://www.youtube.com/embed/1g3kYtJf6Tw?si=RYUZxtQ3joMTSSRe"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                    <div class="Channel">
+                        <img src="channels4_profile.jpg">
+                        <a href="#">Java or C++ or Python | Which language is best for Placements?</a>
+                        <br>
+                    </div>
+                    <div class="chname">
+                        <a href="#">Apna College</a>
+                        <br>
+                        <a href="#">1.3M views 1 year ago</a>
+                    </div>
+                </div>
+                <div class="box2">
+                    <iframe width="360" height="200" src="https://www.youtube.com/embed/zUFb9UAKgjw?si=XitTfBNrkQ_lrz8t"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                    <div class="Channel">
+                        <img src="HARRY.jpg.">
+                        <a href="#">Top Skills to Learn in 2025</a>
+                        <br>
+                    </div>
+                    <div class="chname">
+                        <a href="#">CodeWithHarry</a>
+                        <br>
+                        <a href="#">83,472 views 22 hours ago </a>
+                    </div>
+                </div>
+                <div class="box2">
+                    <iframe width="360" height="200" src="https://www.youtube.com/embed/5AhLRjkFeZk?si=dHVR8sWBvhBLUYx9"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                    <div class="Channel">
+                        <img src="HARRY.jpg.">
+                        <a href="#">5 Mistakes Beginner Web Developers Make (Avoid These)</a>
+                        <br>
+                    </div>
+                    <div class="chname">
+                        <a href="#">CodeWithHarry</a>
+                        <br>
+                        <a href="#">99K views 4 days ago </a>
+                    </div>
+                </div>
+
+</body>
+
+</html>
